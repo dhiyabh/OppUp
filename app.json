@@ -1,0 +1,81 @@
+{
+  "expo": {
+    "name": "GrabCab Driver",
+    "description": "Taxi Booking Driver App",
+    "slug": "GrabCabDriver",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "notification": {
+      "icon": "./assets/images/push_notification.png"
+    },
+    "version": "1.4",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.exicube.grabcabdriverapp",
+      "infoPlist": {
+        "NSLocationAlwaysUsageDescription": "This app uses the always location access in the background for improved pickups and dropoffs, customer support and safety purpose.",
+        "NSLocationWhenInUseUsageDescription": "This app uses the location for handling improved pickups and dropoffs, customer support and safety purpose.",
+        "NSCameraUsageDescription": "This app uses the camera to take your profile picture.",
+        "NSPhotoLibraryUsageDescription": "This app uses Photo Library to help upload your profile picture.",
+        "ITSAppUsesNonExemptEncryption":false,
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      },
+      "config": {
+        "googleMapsApiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      },
+      "buildNumber": "1.4"
+    },
+    "android": {
+      "package": "com.exicube.grabcabdriverapp",
+      "versionCode": 14,
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA_ROLL"
+      ],
+      "googleServicesFile": "./google-services.json",
+      "config": {
+        "googleMaps": {
+          "apiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+      },
+      "useNextNotificationsApi": true
+    },
+    "extra":{
+      "firebaseConfig":{
+        "apiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "authDomain": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "databaseURL": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "projectId": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "storageBucket": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "messagingSenderId": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "appId": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "measurementId": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      },
+      "googlemapkey":"XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    }
+  }
+}
