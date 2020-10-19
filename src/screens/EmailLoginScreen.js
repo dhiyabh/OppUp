@@ -183,7 +183,7 @@ export default class EmailLoginScreen extends Component {
                             value={this.state.email}
                         />
                     </View>
-                    <View style={styles.box2}>
+                    <View  style={styles.box2}>
                         <TextInput
                             ref={(ref) => { this.passInput = ref }}
                             style={styles.textInput}
