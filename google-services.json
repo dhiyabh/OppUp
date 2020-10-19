@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "270209193514",
+    "firebase_url": "https://vamos-416f8.firebaseio.com",
+    "project_id": "vamos-416f8",
+    "storage_bucket": "vamos-416f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270209193514:android:ebff973d43b5680f361553",
+        "android_client_info": {
+          "package_name": "fr.startnow.vamosdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270209193514-slq5b7bvgqo9jgsaf36p0ehv746rrqpi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHchaKsyOBAqqBIipeWkfELUykGLpNHMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270209193514-slq5b7bvgqo9jgsaf36p0ehv746rrqpi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
