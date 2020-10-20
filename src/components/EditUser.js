@@ -221,6 +221,7 @@ export default class EditUser extends React.Component {
                                     errorStyle={styles.errorMessageStyle}
                                     inputContainerStyle={styles.inputContainerStyle}
                                     containerStyle={styles.textInputStyle}
+                                    autoCapitalize='none'
                                 />
                             </View>
                             <View style={styles.buttonContainer}>

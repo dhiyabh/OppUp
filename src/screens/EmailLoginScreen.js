@@ -181,6 +181,7 @@ export default class EmailLoginScreen extends Component {
                             placeholder={languageJSON.email_placeholder}
                             onChangeText={(value) => this.setState({ email: value })}
                             value={this.state.email}
+                            autoCapitalize='none'
                         />
                     </View>
                     <View  style={styles.box2}>
@@ -191,6 +192,7 @@ export default class EmailLoginScreen extends Component {
                             onChangeText={(value) => this.setState({ password: value })}
                             value={this.state.password}
                             secureTextEntry={true}
+                            autoCapitalize='none'
                         />
                     </View>
                     {this.state.customStyleIndex != 0 ?
@@ -202,6 +204,7 @@ export default class EmailLoginScreen extends Component {
                                 onChangeText={(value) => this.setState({ confirmpassword: value })}
                                 value={this.state.confirmpassword}
                                 secureTextEntry={true}
+                                autoCapitalize='none'
                             />
                         </View>
                         : null}
