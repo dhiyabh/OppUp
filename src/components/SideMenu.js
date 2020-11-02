@@ -84,14 +84,14 @@ export default class SideMenu extends React.Component{
     render(){
         return(
             <View style={styles.mainViewStyle}>
-                <SideMenuHeader onPress={this.navigateToScreen("Profile") } headerStyle={styles.myHeader} userPhoto={this.state.profile_image} userEmail={this.state.email} userName ={this.state.firstName + ' '+ this.state.lastName}></SideMenuHeader> 
+                <SideMenuHeader onPress={this.navigateToScreen("Profile") } headerStyle={styles.myHeader} userPhoto={this.state.profile_image} userName ={this.state.firstName + ' '+ this.state.lastName}></SideMenuHeader> 
                 
                 <View style={styles.compViewStyle}>
                     <View style={[styles.vertialLine,{height: (width <= 320) ? width/1.53 : width/1.68 }]}></View>
                     <FlatList
                         data={this.state.sideMenuList}     
                         keyExtractor={(item,index) => index.toString()}   
-                        style={{ marginTop: 20}}   
+                        style={{ marginTop: 20 }}   
                         bounces = {false}
                         renderItem={({item, index}) => 
                             <TouchableOpacity
@@ -108,7 +108,7 @@ export default class SideMenu extends React.Component{
                                     <Icon
                                         name={item.icon}
                                         type={item.type}
-                                        color={colors.WHITE}
+                                        color="#d77b28"
                                         size={16}
                                         containerStyle={styles.iconStyle}
                                     />

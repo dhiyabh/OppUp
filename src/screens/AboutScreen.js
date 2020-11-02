@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         //marginTop: StatusBar.currentHeight,
     } ,
     headerStyle: { 
-        backgroundColor: colors.GREY.default, 
+        backgroundColor: "#d77b28", 
         borderBottomWidth: 0 
     },
     headerTitleStyle: { 

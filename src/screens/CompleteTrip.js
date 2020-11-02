@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
         lineHeight: 22
     },
     headerStyle: {
-        backgroundColor: colors.GREY.default,
+        backgroundColor: "#d77b28",
         borderBottomWidth: 0
     },
     headerTitleStyle: {

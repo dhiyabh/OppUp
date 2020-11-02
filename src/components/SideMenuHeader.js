@@ -17,15 +17,7 @@ const SideMenuHeader = ({headerStyle, userPhoto, userName, userEmail, onPress}) 
             <View style={styles.headerTextStyle}>
                 <Text style={styles.ProfileNameStyle}>{userName?userName.toUpperCase():""}</Text>
             </View>
-            <View style={styles.iconViewStyle}>
-                <Icon
-                    name='mail-read'
-                    type='octicon'
-                    color={colors.WHITE}
-                    size={16}
-                />
-                <Text style={styles.emailStyle}>{userEmail?userEmail.toLowerCase():""}</Text>
-            </View>
+            
         </TouchableOpacity>
    );
 
@@ -64,14 +56,14 @@ const styles = {
         borderRadius: 50,
         overflow: 'hidden',
         borderWidth: 2,
-        borderColor: colors.WHITE,
+        borderColor: "#d77b28",
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20
     },
     ProfileNameStyle:{
         fontWeight: 'bold', 
-        color: colors.WHITE, 
+        color: "#d77b28", 
         fontSize: 18,
         textAlign:"center"
     },

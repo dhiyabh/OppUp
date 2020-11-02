@@ -298,7 +298,7 @@ headerTitleStyle: {
   textAlign:'center',
 },
 headerStyle: { 
-  backgroundColor: colors.GREY.default, 
+  backgroundColor: "#d77b28", 
   borderBottomWidth: 0 
 },
 

@@ -291,6 +291,7 @@ export default class DriverTripAccept extends React.Component {
     render() {
         return (
             <View style={styles.mainViewStyle}>
+           
                 <Header
                     backgroundColor={colors.GREY.default}
                     leftComponent={{ icon: 'md-menu', type: 'ionicon', color: colors.WHITE, size: 30, component: TouchableWithoutFeedback, onPress: () => { this.props.navigation.toggleDrawer(); } }}
@@ -446,17 +447,19 @@ export default class DriverTripAccept extends React.Component {
 //Screen Styling
 const styles = StyleSheet.create({
     headerStyle: {
-        backgroundColor: colors.GREY.default,
-        borderBottomWidth: 0
+        backgroundColor: "#d77b28",
+        borderBottomWidth: 0,
+        
+
     },
     headerInnerStyle: {
         marginLeft: 10,
-        marginRight: 10
+        marginRight: 10,
     },
     headerTitleStyle: {
         color: colors.WHITE,
         fontFamily: 'Roboto-Bold',
-        fontSize: 20
+        fontSize: 20,
     },
     mapcontainer: {
         flex: 1.5,

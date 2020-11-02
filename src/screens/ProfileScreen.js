@@ -314,7 +314,7 @@ export default class ProfileScreen extends React.Component {
 //Screen Styling
 const styles = StyleSheet.create({
     headerStyle: { 
-        backgroundColor: colors.GREY.default, 
+        backgroundColor: "#d77b28", 
         borderBottomWidth: 0 
     },
     headerTitleStyle: { 
