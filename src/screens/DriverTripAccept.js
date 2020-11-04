@@ -6,23 +6,28 @@ import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { colors } from '../common/theme';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
+import * as Notifications from 'expo-notifications';
 var { width, height } = Dimensions.get('window');
 import * as firebase from 'firebase'
 var { height } = Dimensions.get('window');
 var google;
 import { RequestPushMsg } from '../common/RequestPushMsg';
+import {  registerForPushNotificationsAsync } from '../common/GetPushToken';
 import { google_map_key } from '../common/key';
 import languageJSON from '../common/language';
 import dateStyle from '../common/dateStyle';
 
+
+
 export default class DriverTripAccept extends React.Component {
+
 
     setModalVisible(visible, data) {
         this.setState({
             modalVisible: visible,
             modalData: data
         });
-    }
+    } 
 
     constructor(props) {
         super(props);
@@ -53,6 +58,7 @@ export default class DriverTripAccept extends React.Component {
             gotAddress: false
         }
         this._getLocationAsync();
+        this.responseListener = React.createRef();
     }
 
     //checking booking status
@@ -129,16 +135,16 @@ export default class DriverTripAccept extends React.Component {
     getRiders() {
         var curuid = firebase.auth().currentUser.uid;
         this.setState({ curUid: firebase.auth().currentUser.uid })
-        let ref = firebase.database().ref('users/' + curuid + '/');
+        let ref = firebase.database().ref('users/' + curuid + '/');       
         ref.on('value', (snapshot) => {
             this.setState({ driverDetails: snapshot.val() })
             var jobs = [];
             if (snapshot.val() && snapshot.val().waiting_riders_list) {
-                let waiting_riderData = snapshot.val().waiting_riders_list;
-                for (let key in waiting_riderData) {
+                let waiting_riderData = snapshot.val().waiting_riders_list;       
+                for (let key in waiting_riderData) {                     
                     waiting_riderData[key].bookingId = key;
                     jobs.push(waiting_riderData[key]);
-                }
+                } 
             }
             this.setState({ tasklist: jobs.reverse() });
             this.jobs = jobs;
@@ -288,10 +294,43 @@ export default class DriverTripAccept extends React.Component {
         })
     }
 
+    currentUserNotification() {
+        var curuid = firebase.auth().currentUser.uid;
+        let ref = firebase.database().ref('users/' + curuid + '/');       
+        ref.on('value', (snapshot) => {
+            let count = 0;
+            if (snapshot.val().waiting_riders_list) {
+                let waiting_riderData = snapshot.val().waiting_riders_list;       
+               for (let key in waiting_riderData) {    
+                   // waiting_riderData[key].bookingId = key;
+                    count = count + 1;
+                }
+           this.sendPushNotification(curuid, null,count+" RIDERS IS WAITING FOR YOU");
+
+            } 
+        }); 
+    }
+
+    componentWillMount() {
+        this.currentUserNotification();
+        this.responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
+            console.log(response);
+        });
+        return () => {
+            Notifications.removeNotificationSubscription(responseListener);
+        };
+    }
+    componentWilUnmount(){
+            this.currentUserNotification();
+ }
+    
+
+
     render() {
         return (
+              
             <View style={styles.mainViewStyle}>
-           
+
                 <Header
                     backgroundColor={colors.GREY.default}
                     leftComponent={{ icon: 'md-menu', type: 'ionicon', color: colors.WHITE, size: 30, component: TouchableWithoutFeedback, onPress: () => { this.props.navigation.toggleDrawer(); } }}

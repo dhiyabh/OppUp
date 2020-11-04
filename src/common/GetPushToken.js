@@ -6,7 +6,7 @@ import {Platform} from 'react-native';
 import  languageJSON  from '../common/language';
 
 export default async function registerForPushNotificationsAsync() {
-  let token;
+  let token; 
   if (Constants.isDevice) {
     const { status: existingStatus } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
     let finalStatus = existingStatus;
@@ -40,4 +40,5 @@ export default async function registerForPushNotificationsAsync() {
       userPlatform:Platform.OS == 'ios'?'IOS':'ANDROID'
     })
   }
+  //return token;
 }

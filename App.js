@@ -15,6 +15,8 @@ import {
   Dimensions
 } from "react-native";
 import languageJSON from './src/common/language';
+import { AppRegistry } from 'react-native'; 
+
 
 var firebaseConfig = Constants.manifest.extra.firebaseConfig;
 firebase.initializeApp(firebaseConfig);
