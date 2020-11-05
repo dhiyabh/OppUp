@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Dimensions, FlatList, Modal, TouchableHighlight, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, StyleSheet, Dimensions, FlatList, Modal, TouchableHighlight, TouchableWithoutFeedback, StatusBar } from 'react-native';
 import { Button, Header } from 'react-native-elements';
 import Polyline from '@mapbox/polyline';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
@@ -305,7 +305,7 @@ export default class DriverTripAccept extends React.Component {
                    // waiting_riderData[key].bookingId = key;
                     count = count + 1;
                 }
-           this.sendPushNotification(curuid, null,count+" RIDERS IS WAITING FOR YOU");
+            this.sendPushNotification(curuid, null, count+" RIDERS IS WAITING FOR YOU");
 
             } 
         }); 
@@ -330,7 +330,7 @@ export default class DriverTripAccept extends React.Component {
         return (
               
             <View style={styles.mainViewStyle}>
-
+                <StatusBar backgroundColor="#bf5d04" hidden={false} barStyle='light-content' translucent={true} />
                 <Header
                     backgroundColor={colors.GREY.default}
                     leftComponent={{ icon: 'md-menu', type: 'ionicon', color: colors.WHITE, size: 30, component: TouchableWithoutFeedback, onPress: () => { this.props.navigation.toggleDrawer(); } }}
