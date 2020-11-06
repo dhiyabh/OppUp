@@ -230,8 +230,10 @@ sendMessege(inputmessage){
 render() {
   return (
     <View style={styles.container}>
+        <StatusBar backgroundColor="#bf5d04" hidden={false} barStyle='light-content' translucent={true} />
         <Header 
-            backgroundColor={colors.GREY.default}
+            
+            backgroundColor={"#d77b28"}
             leftComponent={{icon:'angle-left', type:'font-awesome', color: colors.WHITE, size: 30, component: TouchableWithoutFeedback,onPress: ()=>{this.props.navigation.goBack();} }}
             centerComponent={<Text style={styles.headerTitleStyle}>{languageJSON.chat}</Text>}
             containerStyle={styles.headerStyle}
@@ -299,7 +301,8 @@ headerTitleStyle: {
 },
 headerStyle: { 
   backgroundColor: "#d77b28", 
-  borderBottomWidth: 0 
+  borderBottomWidth: 0 ,
+  borderRadius:20,
 },
 
 inrContStyle:{
@@ -345,7 +348,7 @@ send: {
   padding: 20
 },
 drivermsgStyle:{
-  backgroundColor:colors.GREY.default,
+  backgroundColor:"#bf5d04",
   marginBottom:5,
   marginTop:5,
   marginRight:10,

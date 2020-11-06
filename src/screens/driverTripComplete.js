@@ -6,7 +6,8 @@ import {
     FlatList,
     TouchableWithoutFeedback,
     Platform,
-    AsyncStorage
+    AsyncStorage,
+    StatusBar
 } from 'react-native';
 import { Button, Header } from 'react-native-elements';
 import { colors } from '../common/theme';
@@ -42,6 +43,7 @@ export default class DriverTripComplete extends React.Component {
 
     componentWillMount() {
         const allDetails = this.props.navigation.getParam('allDetails');
+                console.log("allDetails:"+allDetails);
         const trip_cost = this.props.navigation.getParam('trip_cost');
         const trip_end_time = this.props.navigation.getParam('trip_end_time');
         this.setState({
@@ -62,7 +64,7 @@ export default class DriverTripComplete extends React.Component {
     //done button press function
     onPressDone(item) {
         if (item.booking_type_web) {
-            let cost = parseFloat(item.trip_cost).toFixed(2);
+            let cost = (item.trip_cost);
             firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/my_bookings/' + item.bookingId + '/').update({
                 payment_status: "PAID",
                 payment_mode: "Cash",
@@ -155,6 +157,7 @@ export default class DriverTripComplete extends React.Component {
     render() {
         return (
             <View style={styles.mainViewStyle}>
+                <StatusBar backgroundColor="#bf5d04" hidden={false} barStyle='light-content' translucent={true} />
                 <Header
                     backgroundColor={colors.GREY.default}
                     leftComponent={{ icon: 'md-menu', type: 'ionicon', color: colors.WHITE, size: 30, component: TouchableWithoutFeedback, onPress: () => { this.props.navigation.toggleDrawer(); } }}
@@ -206,7 +209,8 @@ export default class DriverTripComplete extends React.Component {
 const styles = StyleSheet.create({
     headerStyle: {
         backgroundColor: "#d77b28",
-        borderBottomWidth: 0
+        borderBottomWidth: 0,
+        borderRadius:20,
     },
     headerInnerStyle: {
         marginLeft: 10,

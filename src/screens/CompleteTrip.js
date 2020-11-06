@@ -7,7 +7,8 @@ import {
     TouchableWithoutFeedback,
     AsyncStorage,
     Image,
-    Modal
+    Modal,
+    StatusBar
 } from 'react-native';
 var { width } = Dimensions.get('window');
 import { TrackNow } from '../components';
@@ -297,6 +298,7 @@ export default class DriverCompleteTrip extends React.Component {
     render() {
         return (
             <View style={styles.containerView}>
+                <StatusBar backgroundColor="#bf5d04" hidden={false} barStyle='light-content' translucent={true} />
                 <Header
                     backgroundColor={colors.GREY.default}
                     leftComponent={{ icon: 'md-menu', type: 'ionicon', color: colors.WHITE, size: 30, component: TouchableWithoutFeedback, onPress: () => { this.props.navigation.toggleDrawer(); } }}
@@ -339,7 +341,8 @@ const styles = StyleSheet.create({
     },
     headerStyle: {
         backgroundColor: "#d77b28",
-        borderBottomWidth: 0
+        borderBottomWidth: 0,
+        borderRadius:20,
     },
     headerTitleStyle: {
         color: colors.WHITE,

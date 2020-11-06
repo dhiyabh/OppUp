@@ -7,7 +7,8 @@ import { StyleSheet,
     ScrollView,
     Dimensions,
     Platform,
-    AsyncStorage
+    AsyncStorage,
+    StatusBar
  } from 'react-native';
  import Polyline from '@mapbox/polyline';
  import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
@@ -137,6 +138,7 @@ export default class RideDetails extends React.Component{
     render(){
         return(            
             <View style={styles.mainView}>
+                <StatusBar backgroundColor="#bf5d04" hidden={false} barStyle='light-content' translucent={true} />
                 <Header 
                     backgroundColor={colors.GREY.default}
                     leftComponent={{icon:'ios-arrow-back', type:'ionicon', color: colors.WHITE, size: 30, component: TouchableWithoutFeedback,onPress: ()=>{this.goBack()} }}
@@ -196,7 +198,7 @@ export default class RideDetails extends React.Component{
                                     <Avatar
                                     size="small"
                                     rounded
-                                    source={require('../../assets/images/profilePic.jpg')}
+                                    source={{uri:this.state.paramData.driver_image}}
                                     activeOpacity={0.7}
                                     />:null
                                 :null}               
@@ -359,7 +361,8 @@ export default class RideDetails extends React.Component{
 const styles = StyleSheet.create({
     headerStyle: { 
         backgroundColor: "#d77b28", 
-        borderBottomWidth: 0 
+        borderBottomWidth: 0 ,
+        borderRadius:20
     },
     headerTitleStyle: { 
         color: colors.WHITE,

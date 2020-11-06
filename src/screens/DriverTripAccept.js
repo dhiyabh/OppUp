@@ -488,12 +488,14 @@ const styles = StyleSheet.create({
     headerStyle: {
         backgroundColor: "#d77b28",
         borderBottomWidth: 0,
-        
+        borderRadius:20,
+
 
     },
     headerInnerStyle: {
         marginLeft: 10,
         marginRight: 10,
+
     },
     headerTitleStyle: {
         color: colors.WHITE,

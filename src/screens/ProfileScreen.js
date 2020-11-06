@@ -10,7 +10,8 @@ import {
     TouchableWithoutFeedback,
     ActivityIndicator,
     Alert,
-    Switch
+    Switch,
+    StatusBar
 } from 'react-native';
 import { Icon, Header } from 'react-native-elements';
 import ActionSheet from 'react-native-actionsheet';
@@ -192,6 +193,7 @@ export default class ProfileScreen extends React.Component {
         let { image } = this.state;
         return (        
         <View style={styles.mainView}>
+            <StatusBar backgroundColor="#bf5d04" hidden={false} barStyle='light-content' translucent={true} />
             <Header 
                 backgroundColor={colors.GREY.default}
                 leftComponent={{icon:'md-menu', type:'ionicon', color: colors.WHITE, size: 30, component: TouchableWithoutFeedback,onPress: ()=>{this.props.navigation.toggleDrawer();} }}
@@ -315,7 +317,8 @@ export default class ProfileScreen extends React.Component {
 const styles = StyleSheet.create({
     headerStyle: { 
         backgroundColor: "#d77b28", 
-        borderBottomWidth: 0 
+        borderBottomWidth: 0 ,
+        borderRadius:20,
     },
     headerTitleStyle: { 
         color: colors.WHITE,

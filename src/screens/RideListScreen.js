@@ -55,6 +55,7 @@ export default class RideListPage extends React.Component {
     render() {
         return (
             <View style={styles.mainView}>
+                <StatusBar backgroundColor="#bf5d04" hidden={false} barStyle='light-content' translucent={true} />
                 <Header 
                     backgroundColor={colors.GREY.default}
                     leftComponent={{icon:'md-menu', type:'ionicon', color:colors.WHITE, size: 30, component: TouchableWithoutFeedback,onPress: ()=>{this.props.navigation.toggleDrawer();} }}
@@ -73,7 +74,8 @@ export default class RideListPage extends React.Component {
 const styles = StyleSheet.create({
     headerStyle: { 
         backgroundColor: "#d77b28", 
-        borderBottomWidth: 0 
+        borderBottomWidth: 0 ,
+        borderRadius:20
     },
     headerTitleStyle: { 
         color: colors.WHITE,

@@ -84,7 +84,7 @@ export default {
     cancel:'Cancel',
     ok:'OK',
     accept:'Accept',
-    task_list:'Task List',
+    task_list:'Rides List',
     rider_not_here:'Currently no riders in your area',
     booking_request_rejected:'Your booking request has rejected by requested driver',
     driver_requested_for_payment:'Driver has requested for payment. Your booking id is',

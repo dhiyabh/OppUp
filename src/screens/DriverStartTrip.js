@@ -8,7 +8,8 @@ import {
     TouchableWithoutFeedback,
     AsyncStorage,
     Linking,
-    TouchableOpacity
+    TouchableOpacity,
+    StatusBar
 } from 'react-native';
 import { MapComponent, TripStartModal } from '../components';
 import { Button, Header, Icon } from 'react-native-elements';
@@ -255,6 +256,7 @@ export default class DriverStartTrip extends React.Component {
     render() {
         return (
             <View style={styles.containerView}>
+                <StatusBar backgroundColor="#bf5d04" hidden={false} barStyle='light-content' translucent={true} />
                 <Header
                     backgroundColor={colors.GREY.default}
                     leftComponent={{ icon: 'md-menu', type: 'ionicon', color: colors.WHITE, size: 30, component: TouchableWithoutFeedback, onPress: () => { this.props.navigation.toggleDrawer(); } }}
@@ -359,7 +361,8 @@ const styles = StyleSheet.create({
     },
     headerStyle: {
         backgroundColor: "#d77b28",
-        borderBottomWidth: 0
+        borderBottomWidth: 0,
+        borderRadius:20
     },
     headerTitleStyle: {
         color: colors.WHITE,
