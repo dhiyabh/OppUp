@@ -53,7 +53,7 @@ export default class EmailLoginScreen extends Component {
                 }
             }
         } else {
-            if (this.validateEmail(email) && this.validatePassword(password, 'alphanumeric')) {
+            if (this.validateEmail(email) && this.validatePassword(password, 'any')) {
                 if (password == confirmpassword) {
                     try {
                         await firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -113,10 +113,10 @@ export default class EmailLoginScreen extends Component {
         const regx1 = /^([a-zA-Z0-9@*#]{8,15})$/
         const regx2 = /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/
         if (complexity == 'any') {
-            var passwordValid = password.length >= 1;
+            var passwordValid = password.length >= 6;
             if (!passwordValid) {
                 this.passInput.focus();
-                alert(languageJSON.password_blank_messege);
+                alert("Password should be at least 6 characters");
             }
         }
         else if (complexity == 'alphanumeric') {

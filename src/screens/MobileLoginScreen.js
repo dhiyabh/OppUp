@@ -23,12 +23,14 @@ export default class MobileLoginScreen extends Component {
     firebaseConfig = firebase.apps.length ? firebase.app().options : undefined;
 
     constructor(props) {
-        super(props);
-        let arr = [];
-        for(let i=0;i< countries.length; i++){
+        super(props); 
+        let arr = [{label:countries[41].label+" (+"+countries[41].phone+")",value:"+"+countries[41].phone,key:countries.code},
+                   {label:countries[221].label+" (+"+countries[221].phone+")",value:"+"+countries[221].phone,key:countries.code}
+        ];
+   /*   for(let i=0;i< countries.length; i++){
             arr.push({label:countries[i].label + " (+" + countries[i].phone + ")",value: "+" + countries[i].phone,key:countries.code});
         }
-
+*/
         this.state = {
             phoneNumber: null,
             verificationId: null,
@@ -36,7 +38,7 @@ export default class MobileLoginScreen extends Component {
             countryCodeList:arr,
             countryCode:null
         }
-    }
+    } 
 
     onPressLogin = async () => {
         if(this.state.countryCode && this.state.countryCode!==languageJSON.select_country){
