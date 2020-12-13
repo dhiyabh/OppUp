@@ -390,6 +390,11 @@ export default class DriverTripAccept extends React.Component {
                                             <View style={styles.redDot}></View>
                                             <Text style={styles.addressViewTextStyle}>{item.drop.add}</Text>
                                         </View>
+                                        <View style={styles.fixAdressStyle}>
+
+                                            <Text style={styles.addressViewTextStyle}>{item.proposedFare ? "Fare:  "+parseFloat( item.proposedFare).toFixed(2)+" CHF" : null}</Text>
+                        
+                                        </View>
                                     </View>
 
                                     <View style={styles.detailsBtnView}>
