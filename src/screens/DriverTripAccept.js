@@ -247,7 +247,6 @@ export default class DriverTripAccept extends React.Component {
 
     //ignore button press function
     onPressIgnore(item) {
-        console.log(item.bookingId)
         firebase.database().ref('bookings/' + item.bookingId + '/').once('value', data => {
             if (data.val()) {
                 let mainBookingData = data.val();
@@ -294,7 +293,7 @@ export default class DriverTripAccept extends React.Component {
         })
     }
 
-    currentUserNotification() {
+ /*  currentUserNotification() {
         var curuid = firebase.auth().currentUser.uid;
         let ref = firebase.database().ref('users/' + curuid + '/');       
         ref.on('value', (snapshot) => {
@@ -322,7 +321,7 @@ export default class DriverTripAccept extends React.Component {
     }
     componentWilUnmount(){
             this.currentUserNotification();
- }
+ }*/
     
 
 
@@ -468,7 +467,7 @@ export default class DriverTripAccept extends React.Component {
                                         <Text style={styles.cancelTextStyle}>{languageJSON.cancel}</Text>
                                     </TouchableHighlight>
                                     <TouchableHighlight
-                                        style={styles.btnStyle}
+                                        style={styles.btnStyle} 
                                         onPress={() => {
                                             this.onPressIgnore(this.state.modalData)
                                         }}>
