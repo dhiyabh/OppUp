@@ -24,13 +24,11 @@ export default class MobileLoginScreen extends Component {
 
     constructor(props) {
         super(props); 
-        let arr = [{label:countries[41].label+" (+"+countries[41].phone+")",value:"+"+countries[41].phone,key:countries.code},
-                   {label:countries[221].label+" (+"+countries[221].phone+")",value:"+"+countries[221].phone,key:countries.code}
-        ];
-   /*   for(let i=0;i< countries.length; i++){
+        let arr = [];
+      for(let i=0;i< countries.length; i++){
             arr.push({label:countries[i].label + " (+" + countries[i].phone + ")",value: "+" + countries[i].phone,key:countries.code});
         }
-*/
+
         this.state = {
             phoneNumber: null,
             verificationId: null,
@@ -97,11 +95,7 @@ export default class MobileLoginScreen extends Component {
 
         return (
             <KeyboardAvoidingView behavior={"position"} style={styles.container}>
-                <ImageBackground
-                    source={require("../../assets/images/bg.png")}
-                    resizeMode="stretch"
-                    style={styles.imagebg}
-                >
+                <View style={{backgroundColor:"orange"}}>
                     <FirebaseRecaptchaVerifierModal
                         ref={ref => (this.recaptchaVerifier = ref)}
                         firebaseConfig={this.firebaseConfig}
@@ -172,7 +166,7 @@ export default class MobileLoginScreen extends Component {
                             </TouchableOpacity>
                         </View>
                         : null}
-                </ImageBackground>
+                </View>
             </KeyboardAvoidingView>
         );
     }
@@ -193,17 +187,17 @@ const styles = StyleSheet.create({
         marginTop: 0,
         marginLeft: 0,
         marginRight: 0,
-        height: Dimensions.get('window').height * 0.55
+        height: Dimensions.get('window').height * 0.57
     },
     backButtonImage: {
         height: 40,
         width: 40,
         marginTop: 50,
         marginLeft: 35,
-        marginTop: 45
+        
     },
     logintext: {
-        color: "rgba(255,255,255,1)",
+        color: "blue",
         fontSize: 18,
         fontFamily: "Roboto-Regular",
         marginTop: 0,
@@ -212,7 +206,7 @@ const styles = StyleSheet.create({
     blackline: {
         width: 140,
         height: 1,
-        backgroundColor: "rgba(0,0,0,1)",
+        backgroundColor: "blue",
         marginTop: 12,
         alignSelf: "center"
     },
@@ -254,7 +248,10 @@ const styles = StyleSheet.create({
         height: 35,
         marginTop: 22,
         marginLeft: 35,
-        marginRight: 35
+        marginRight: 35,
+        marginBottom:33,
+        borderRadius:25,
+        backgroundColor:"blue"
     },
     actionLine: {
         height: 20,

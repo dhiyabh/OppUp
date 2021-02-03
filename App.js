@@ -93,7 +93,7 @@ export default class App extends React.Component {
         :
         <View style={[styles.container, styles.horizontal]}>
           <ImageBackground
-              source={require("./assets/images/intro.jpg")}
+              
               resizeMode="stretch"
               style={styles.imagebg}
           >

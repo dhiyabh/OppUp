@@ -4,6 +4,7 @@ import {
     View,
     ImageBackground,
     Dimensions,
+    Text
 } from "react-native";
 import MaterialButtonDark from "../components/MaterialButtonDark";
 import languageJSON from '../common/language';
@@ -27,11 +28,9 @@ export default class IntroScreen extends Component {
 
     render() {
         return (
-            <ImageBackground
-                source={require("../../assets/images/intro.jpg")}
-                resizeMode="stretch"
-                style={styles.imagebg}
-            >
+            <View>
+                <Text style={{color:"blue", fontSize:80,marginTop:40, marginStart:73}}>Opp</Text>
+                <Text style={{color:"orange", fontSize:70, marginStart:160,marginTop:105, position:"absolute"}}>Up</Text>
                 <View style={styles.topSpace}></View>
                 <MaterialButtonDark
                     onPress={() => this.onPressLoginEmail()}
@@ -41,7 +40,7 @@ export default class IntroScreen extends Component {
                     onPress={this.onPressLoginMobile}
                     style={styles.materialButtonDark2}
                 >{languageJSON.login_title}</MaterialButtonDark>
-            </ImageBackground>
+            </View>
         );
     }
 }
@@ -61,7 +60,7 @@ const styles = StyleSheet.create({
         marginTop: 0,
         marginLeft: 0,
         marginRight: 0,
-        height: Dimensions.get('window').height * 0.65,
+        height: Dimensions.get('window').height * 0.2,
         width: Dimensions.get('window').width
     },
     materialButtonDark: {
@@ -69,14 +68,16 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginLeft: 35,
         marginRight: 35,
-        backgroundColor: "#3b3b3b",
+        backgroundColor: "blue",
+        borderRadius:25
     },
     materialButtonDark2: {
         height: 40,
         marginTop: 14,
         marginLeft: 35,
         marginRight: 35,
-        backgroundColor: "#3b3b3b",
+        backgroundColor: "blue",
+        borderRadius:25
     },    
     actionLine: {
         height: 20,

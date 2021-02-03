@@ -43,33 +43,7 @@ export default class AboutPage extends React.Component {
                     containerStyle={styles.headerStyle}
                     innerContainerStyles={{marginLeft:10, marginRight: 10}}
                 />
-                <View>
-                <ScrollView styles={{marginTop:10}}>
-                    <Text style={styles.aboutTitleStyle}>{this.state.heading?this.state.heading:null}</Text>
-                    <View style={styles.aboutcontentmainStyle}>
-                    <Image
-                      style={{width: '100%', height: 150}}
-                      source={require('../../assets/images/about_us.png')}
-                    />
-                    
-                    <Text style={styles.aboutcontentStyle}>
-                       
-                       {this.state.contents?this.state.contents:null}
-                    </Text>
-                    <Text style={styles.aboutTitleStyle}>{languageJSON.contact_details}</Text>
-                    <View style={styles.contact}>
-                        <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row'}}>  
-                            <Text style={styles.contacttype1}>{languageJSON.email}</Text>
-                            <Text style={styles.contacttype1}> {this.state.email?this.state.email:null}</Text>
-                        </View>      
-                        <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row'}}>
-                            <Text style={styles.contacttype2}>{languageJSON.phone}</Text>
-                            <Text style={styles.contacttype1}> {this.state.phone?this.state.phone:null}</Text>
-                        </View>
-                    </View>               
-                 </View>
-                </ScrollView>
-               </View>
+                
            </View>
            
         );

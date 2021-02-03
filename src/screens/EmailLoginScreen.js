@@ -146,11 +146,7 @@ export default class EmailLoginScreen extends Component {
         return (
             <KeyboardAvoidingView behavior={"position"} style={styles.container}>
 
-                <ImageBackground
-                    source={require("../../assets/images/bg.png")}
-                    resizeMode="stretch"
-                    style={styles.imagebg}
-                >
+                <View style={{backgroundColor:"orange"}}>
                     <TouchableOpacity style={styles.backButton} onPress={() => { this.props.navigation.navigate('Intro') }}>
                         <Image
                             source={require("../../assets/images/ios-back.png")}
@@ -169,9 +165,9 @@ export default class EmailLoginScreen extends Component {
                             borderWidth: 0,
                             borderColor: 'transparent',
                         }}
-                        activeTabStyle={{ borderBottomColor: '#212121', backgroundColor: 'transparent', borderBottomWidth: 2, marginTop: 2 }}
+                        activeTabStyle={{ borderBottomColor: 'blue', backgroundColor: 'transparent', borderBottomWidth: 2, marginTop: 2 }}
                         tabTextStyle={{ color: '#fff', fontWeight: 'bold' }}
-                        activeTabTextStyle={{ color: '#212121' }}
+                        activeTabTextStyle={{ color: 'blue' }}
                     />
 
                     <View style={styles.box1}>
@@ -219,7 +215,7 @@ export default class EmailLoginScreen extends Component {
                             </TouchableOpacity>
                         </View>
                         : null}
-                </ImageBackground>
+                </View>
             </KeyboardAvoidingView>
         );
     }
@@ -297,7 +293,9 @@ const styles = StyleSheet.create({
         height: 35,
         marginTop: 18,
         marginLeft: 35,
-        marginRight: 35
+        marginRight: 35,
+        backgroundColor:"blue",
+        borderRadius:25
     },
     linkBar: {
         flexDirection: "row",

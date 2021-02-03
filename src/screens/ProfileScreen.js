@@ -205,16 +205,6 @@ export default class ProfileScreen extends React.Component {
                {
                    this.uploadImage()
                }
-                 <View style={styles.scrollViewStyle1} >
-                    <Text style={styles.profStyle}>{languageJSON.active_status}</Text>
-                    <Switch
-                        style={styles.switchAlignStyle}
-                        value={this.state.driverActiveStatus}
-                        onValueChange={() => {
-                        this.onChangeFunction(this.state.driverActiveStatus);
-                    }}
-              />
-                </View>
                 <View style={styles.scrollViewStyle} >
                     <Text style={styles.profStyle}>{languageJSON.profile_details}</Text>
                     <Icon

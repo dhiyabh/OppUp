@@ -121,6 +121,7 @@ export default class DriverRegistrationPage extends React.Component {
 const styles = StyleSheet.create({
   containerView: {
     flex: 1,
+    backgroundColor:"orange"
   },
   textContainer: { textAlign: "center" },
 });

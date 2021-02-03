@@ -1,8 +1,7 @@
 {
   "expo": {
-    "name": "VAMOS Driver",
-    "description": "Taxi company in Zurich, Vamos provides all types of private or business trips in the shortest possible time. Driver App",
-    "slug": "VamosDriver",
+    "name": "OppUp",
+    "slug": "OppUp",
     "privacy": "public",
     "platforms": [
       "ios",
@@ -13,12 +12,8 @@
     },
     "version": "1.2",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#ffffff"
-    },
+    "icon": "./assets/images/Notification.png",
+    
     "updates": {
       "fallbackToCacheTimeout": 0
     },

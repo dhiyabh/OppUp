@@ -180,23 +180,21 @@ export default class DiverReg extends React.Component {
             <Background>
                 <Header
                     backgroundColor={colors.TRANSPARENT}
-                    leftComponent={{ icon: 'ios-arrow-back', type: 'ionicon', color: colors.WHITE, size: 35, component: TouchableWithoutFeedback, onPress: onPressBack }}
+                    leftComponent={{ icon: 'ios-arrow-back', type: 'ionicon', color: "blue", size: 35, component: TouchableWithoutFeedback, onPress: onPressBack }}
                     containerStyle={styles.headerContainerStyle}
                     innerContainerStyles={styles.headerInnerContainer}
                 />
                 <ScrollView style={styles.scrollViewStyle}>
-                    <View style={styles.logo}>
-                        <Image source={require('../../assets/images/logo.png')} />
-                    </View>
+                   
                     <KeyboardAvoidingView behavior={Platform.OS == 'ios' ? "padding" : "padding"} style={styles.form}>
                         <View style={styles.containerStyle}>
-                            <Text style={styles.headerStyle}>{languageJSON.driver_registration}</Text>
+                            <Text style={styles.headerStyle}>Registration</Text>
 
                             <View style={styles.textInputContainerStyle}>
                                 <Icon
                                     name='user'
                                     type='font-awesome'
-                                    color={colors.WHITE}
+                                    color={"blue"}
                                     size={30}
                                     containerStyle={styles.iconContainer}
                                 />
@@ -206,7 +204,7 @@ export default class DiverReg extends React.Component {
                                     returnKeyType={'next'}
                                     underlineColorAndroid={colors.TRANSPARENT}
                                     placeholder={languageJSON.first_name}
-                                    placeholderTextColor={colors.WHITE}
+                                    placeholderTextColor={"blue"}
                                     value={this.state.fname}
                                     keyboardType={'default'}
                                     inputStyle={styles.inputTextStyle}
@@ -225,7 +223,7 @@ export default class DiverReg extends React.Component {
                                 <Icon
                                     name='user'
                                     type='font-awesome'
-                                    color={colors.WHITE}
+                                    color={"blue"}
                                     size={30}
                                     containerStyle={styles.iconContainer}
                                 />
@@ -235,7 +233,7 @@ export default class DiverReg extends React.Component {
                                     returnKeyType={'next'}
                                     underlineColorAndroid={colors.TRANSPARENT}
                                     placeholder={languageJSON.last_name}
-                                    placeholderTextColor={colors.WHITE}
+                                    placeholderTextColor={"blue"}
                                     value={this.state.lname}
                                     keyboardType={'default'}
                                     inputStyle={styles.inputTextStyle}
@@ -254,7 +252,7 @@ export default class DiverReg extends React.Component {
                                 <Icon
                                     name='envelope-o'
                                     type='font-awesome'
-                                    color={colors.WHITE}
+                                    color={"blue"}
                                     size={23}
                                     containerStyle={styles.iconContainer}
                                 />
@@ -264,7 +262,7 @@ export default class DiverReg extends React.Component {
                                     returnKeyType={'next'}
                                     underlineColorAndroid={colors.TRANSPARENT}
                                     placeholder={languageJSON.email}
-                                    placeholderTextColor={colors.WHITE}
+                                    placeholderTextColor={"blue"}
                                     value={this.state.email}
                                     keyboardType={'email-address'}
                                     inputStyle={styles.inputTextStyle}
@@ -282,7 +280,7 @@ export default class DiverReg extends React.Component {
                                 <Icon
                                     name='mobile-phone'
                                     type='font-awesome'
-                                    color={colors.WHITE}
+                                    color={"blue"}
                                     size={40}
                                     containerStyle={styles.iconContainer}
                                 />
@@ -292,7 +290,7 @@ export default class DiverReg extends React.Component {
                                     returnKeyType={'done'}
                                     underlineColorAndroid={colors.TRANSPARENT}
                                     placeholder={languageJSON.mobile}
-                                    placeholderTextColor={colors.WHITE}
+                                    placeholderTextColor={"blue"}
                                     value={this.state.mobile}
                                     keyboardType={'numeric'}
                                     inputStyle={styles.inputTextStyle}
@@ -306,85 +304,7 @@ export default class DiverReg extends React.Component {
                                     containerStyle={styles.textInputStyle}
                                 />
                             </View>
-                            <View style={styles.textInputContainerStyle}>
-                                <Icon
-                                    name='ios-car'
-                                    type={'ionicon'}
-                                    color={colors.WHITE}
-                                    size={25}
-                                    containerStyle={styles.iconContainer}
-                                />
-                                {this.state.cars?
-                                <RNPickerSelect
-                                    placeholder={{}}
-                                    value={this.state.carType}
-                                    useNativeAndroidPickerStyle={true} 
-                                    style={{
-                                        inputIOS: styles.pickerStyle,
-                                        placeholder: {
-                                            color: 'white',
-                                        },
-                                        inputAndroid: styles.pickerStyle,
-                                    }}
-                                    onValueChange={(value) => this.setState({carType: value})}
-                                    items={this.state.cars}
-                                />
-                                :null}
-                            </View>
-
-                            <View style={styles.textInputContainerStyle}>
-                                <Icon
-                                    name='ios-car'
-                                    type={'ionicon'}
-                                    color={colors.WHITE}
-                                    size={25}
-                                    containerStyle={styles.iconContainer}
-                                />
-                                <Input
-                                    ref={input => (this.vehicleNameInput = input)}
-                                    editable={true}
-                                    returnKeyType={'next'}
-                                    underlineColorAndroid={colors.TRANSPARENT}
-                                    placeholder={languageJSON.vehicle_model_name}
-                                    placeholderTextColor={colors.WHITE}
-                                    value={this.state.vehicleName}
-                                    inputStyle={styles.inputTextStyle}
-                                    onChangeText={(text) => { this.setState({ vehicleName: text }) }}
-                                    errorMessage={this.state.vehicleNameValid ? null : languageJSON.vehicle_model_name_blank_error}
-                                    blurOnSubmit={true}
-                                    onSubmitEditing={() => { this.validateVehicleName();; this.vehicleNumInput.focus() }}
-                                    errorStyle={styles.errorMessageStyle}
-                                    inputContainerStyle={styles.inputContainerStyle}
-                                    containerStyle={styles.textInputStyle}
-                                />
-                            </View>
-
-
-                            <View style={styles.textInputContainerStyle}>
-                                <Icon
-                                    name='numeric'
-                                    type={'material-community'}
-                                    color={colors.WHITE}
-                                    size={20}
-                                    containerStyle={styles.iconContainer}
-                                />
-                                <Input
-                                    ref={input => (this.vehicleNumInput = input)}
-                                    editable={true}
-                                    underlineColorAndroid={colors.TRANSPARENT}
-                                    placeholder={languageJSON.vehicle_reg_no}
-                                    placeholderTextColor={colors.WHITE}
-                                    value={this.state.vehicleNum}
-                                    inputStyle={styles.inputTextStyle}
-                                    onChangeText={(text) => { this.setState({ vehicleNum: text }) }}
-                                    errorMessage={this.state.vehicleNumValid ? null : languageJSON.vehicle_number_blank_err}
-                                    blurOnSubmit={true}
-                                    onSubmitEditing={() => { this.validateVehicleNum() }}
-                                    errorStyle={styles.errorMessageStyle}
-                                    inputContainerStyle={styles.inputContainerStyle}
-                                    containerStyle={styles.textInputStyle}
-                                />
-                            </View>
+                            
 
                             {
                                 image ?
@@ -399,9 +319,9 @@ export default class DiverReg extends React.Component {
                                         <View>
                                             {
                                                 this.state.imageValid ?
-                                                    <Text style={styles.capturePhotoTitle}>{languageJSON.upload_driving_lisence}</Text>
+                                                    <Text style={styles.capturePhotoTitle}>upload your photo</Text>
                                                     :
-                                                    <Text style={styles.errorPhotoTitle}>{languageJSON.upload_driving_lisence}</Text>
+                                                    <Text style={styles.errorPhotoTitle}>upload your photo</Text>
                                             }
 
                                         </View>
@@ -455,7 +375,7 @@ const styles = {
     },
     inputContainerStyle: {
         borderBottomWidth: 1,
-        borderBottomColor: colors.WHITE
+        borderBottomColor: "blue"
     },
     textInputStyle: {
         marginLeft: 10,
@@ -491,10 +411,10 @@ const styles = {
         height: 40,
         marginLeft:20,
         borderBottomWidth: 1,
-        borderBottomColor: colors.WHITE,
+        borderBottomColor: "blue",
     },
     inputTextStyle: {
-        color: colors.WHITE,
+        color: "blue",
         fontSize: 13,
         marginLeft: 0,
         height: 32
@@ -530,7 +450,7 @@ const styles = {
     },
     headerStyle: {
         fontSize: 18,
-        color: colors.WHITE,
+        color: "blue",
         textAlign: 'center',
         flexDirection: 'row',
         marginTop: 0
